@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3" defaultModelType="flat">
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+        <!--<plugin type="com.aisi.ewalletapi.MapperAnnotationPlugin"></plugin>-->
+
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="[e|E]xample$"/>
+            <property name="replaceString" value="Criteria"/>
+        </plugin>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+        <!--connectionURL="jdbc:mysql://localhost:3306/gfh_mvp2"-->
+        <!--userId="root"-->
+        <!--password="yes123456">-->
+        <!--</jdbcConnection>-->
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/tw-goods"
+                        userId="root"
+                        password="Aisi@2019">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+
+        <!-- generate Model -->
+        <javaModelGenerator targetPackage="com.tw.model"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+
+        <sqlMapGenerator targetPackage="com.tw.mapper"
+                         targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="ANNOTATEDMAPPER"
+                             targetPackage="com.tw.mapper"
+                             implementationPackage="com.tw.mapper"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="twshop_goods_sku" domainObjectName="GoodsSku"/>
+        <table tableName="twshop_goods" domainObjectName="Goods"/>
+        <table tableName="twshop_goods_gallery" domainObjectName="GoodsGallery"/>
+        <table tableName="twshop_goods_sku_key" domainObjectName="GoodsSkuKey"/>
+        <table tableName="twshop_goods_attribute" domainObjectName="GoodsAttribute"/>
+        <table tableName="twshop_attribute" domainObjectName="Attribute"/>
+        <table tableName="twshop_attribute_category" domainObjectName="AttributeCategory"/>
+        <table tableName="twshop_goods_sku_value" domainObjectName="GoodsSkuValue"/>
+
+        <table tableName="twshop_goods_sku_compose" domainObjectName="GoodsSkuCompose"/>
+
+        <table tableName="twshop_category" domainObjectName="Category"/>
+
+        <table tableName="twshop_brand" domainObjectName="Brand"/>
+
+        <table tableName="twshop_ad" domainObjectName="Ad"/>
+
+        <table tableName="twshop_ad_position" domainObjectName="AdPosition"/>
+    </context>
+</generatorConfiguration>
