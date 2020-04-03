@@ -8,7 +8,6 @@ import com.tw.mapper.GoodsSkuValueMapper;
 import com.tw.model.*;
 import com.tw.view.SkuComposeView;
 import com.tw.view.SkuView;
-import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
